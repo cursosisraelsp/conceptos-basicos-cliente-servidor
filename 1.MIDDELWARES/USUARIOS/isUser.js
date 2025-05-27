@@ -14,6 +14,7 @@ const isUser = (req, res,next) => {
     let datoEnviadoEnErro = {resposta:"Usuario o contraseña incorrectos"}
 
     const desencriptoUser = jwt.verify(authorization,process.env.SEGREDO);
+
     console.log("desencriptoUser ",desencriptoUser)
     const {usuario, email} = desencriptoUser;
 
@@ -22,7 +23,7 @@ const isUser = (req, res,next) => {
     if(condicionUsuarioCorrecto){       
         next()
     }else if(usuario === null || email === null || email === undefined || usuario === undefined){
-        //throw new HttpError("Usuario o contraseña incorrectos", 403);
+        //throw new Error("Usuario o contraseña incorrectos", 403);
         res.send(datoEnviadoEnErro); 
     }
      

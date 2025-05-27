@@ -10,7 +10,7 @@ const app = express();
 require('dotenv').config();
 
 // use
-//app.use(cors());
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
 
@@ -23,7 +23,6 @@ app.post("/acceso", accesoUser);
 app.get("/app",(req,res)=>{
     res.sendFile(path.join(__dirname, "static/views/app.html"));
 })
-
 app.get("/paxina-app",isUser,(req,res)=>{
     res.send(paxinas.app)
 })

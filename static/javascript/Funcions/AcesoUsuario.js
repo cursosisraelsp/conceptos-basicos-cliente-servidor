@@ -1,8 +1,7 @@
 export async function AcesoUsuario() {
     botonEnviar.addEventListener("click",async (e)=>{
             e.preventDefault();
-            //const {nome, email} = formulario;// desesctructura o obxeto de entrada
-            //console.log(nome.value, email.value);// imprime os valores do formulario
+       
 
             let datosFormulario = new FormData(formulario);
             let entradas = Object.fromEntries(datosFormulario.entries());

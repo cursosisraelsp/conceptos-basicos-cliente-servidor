@@ -1,14 +1,18 @@
 export async function PeticionPaxina(){
-    let token = localStorage.getItem("token")
+
+                let token = localStorage.getItem("token")
+
                 console.log("entro ... token? ",token)
-                const peticion = await fetch("/paxina-app",{
+
+                const paxinaEnTexto = await fetch("/paxina-app",{
                     method:"GET",
                     headers:{
                         "Authorization": token
                     }
                 })
-                const paxinaText = await peticion.text()
+                const paxinaText = await paxinaEnTexto.text()
                 console.log("paxina ?",paxinaText)
+
                 document.body.innerHTML = paxinaText;
 
                 sair.addEventListener("click",()=>{

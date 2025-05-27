@@ -14,7 +14,10 @@ const accesoUser = (req, res) => {
 
     if(condicionUsuarioCorrecto){
         // ENVIO O USUARIO ENCRIPTADO -- SECRETO 
-        const tokenUsuario = jwt.sign({usuario: req.body.nome,email:req.body.email},process.env.SEGREDO)
+        const tokenUsuario = jwt.sign({
+            usuario: req.body.nome,
+            email:req.body.email},
+            process.env.SEGREDO)
         console.log("tokenUSer ",tokenUsuario)
         datoEnviadoCondicionUsuarioCorrecto.resposta = "acesso autorizado";
         datoEnviadoCondicionUsuarioCorrecto.tokenUsuario = tokenUsuario
