@@ -16,7 +16,10 @@ app.use(express.urlencoded({extended: true}))
 
 // Accedo o arquivo estático
 app.use(express.static(path.join(__dirname, "static")));
-
+// app.metodo (endpoint, middleware,middleware,middleware)
+/***
+ * next() é a función que chama o siguiente middleware
+ */
 //// PETICIONS
 
 app.post("/acceso", accesoUser);
@@ -27,6 +30,21 @@ app.get("/paxina-app",isUser,(req,res)=>{
     res.send(paxinas.app)
 })
 
+app.get("/tareas",isUser,(req,res)=>{
+    const tareas = {
+        tareas1:"isto é a primeira tarefa",
+        tareas2:"isto é a segunda tarefa",
+        tareas3:"isto é a terceira tarefa",
+        tareas4:"isto é a cuarta tarefa",
+        tareas5:"isto é a quinta tarefa",
+        tareas6:"isto é a sexta tarefa",
+        tareas7:"isto é a sétima tarefa",
+        tareas8:"isto é a oitava tarefa",
+        tareas9:"isto é a nona tarefa",
+        tareas10:"isto é a décima tarefa",
+    }
+   res.send(tareas)
+})
 
 //START SERVER
 app.listen(3000, function () {
