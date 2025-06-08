@@ -9,12 +9,11 @@ export const eventosIconos = (icono)=>{
   })
   icono.guardar.addEventListener("click",(e)=>{
     console.log("estoy en icono guardar",e.target)
-     editarContidos(e.target.parentElement.childNodes,false)
+    editarContidos(e.target.parentElement.childNodes,false)
   })
 
   icono.editar.addEventListener("click",(e)=>{
-    
-     editarContidos(e.target.parentElement.childNodes,true)
+    editarContidos(e.target.parentElement.childNodes,true)
   })
 }
 
