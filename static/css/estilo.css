@@ -6,6 +6,19 @@ img[name="icono-eliminar"],img[name="icono-editar"],img[name="icono-guardar"]{
     cursor:pointer;
     width:20px;
     background-color: transparent;
+    border: 1px solid;
+    border-radius: 3px;
+    padding: 2px;
+}
+
+img[name="icono-eliminar"]{
+    background-color: rgb(136, 240, 176);
+}
+img[name="icono-editar"]{
+    background-color: rgb(136, 136, 201);
+}
+img[name="icono-guardar"]{
+    background-color: rgb(238, 216, 175);
 }
 
 .edita{
