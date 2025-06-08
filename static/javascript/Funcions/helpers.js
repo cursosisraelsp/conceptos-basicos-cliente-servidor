@@ -30,3 +30,6 @@ export const editarContidos = (arraySelectores,editar) => {
         }
     }
 }
+export const borrarElemento = (referencia) =>{
+    referencia.remove()
+}
