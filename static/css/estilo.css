@@ -1,7 +1,23 @@
-body{
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(98, 211, 154);
 }
 
+img {
+  width: 30px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+}
+form {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
 img[name="icono-eliminar"],img[name="icono-editar"],img[name="icono-guardar"]{
     cursor:pointer;
     width:20px;
