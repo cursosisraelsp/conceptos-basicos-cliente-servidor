@@ -18,26 +18,52 @@ form {
   flex-direction: column;
   gap: 3px;
 }
-img[name="icono-eliminar"],img[name="icono-editar"],img[name="icono-guardar"]{
+img[name="eliminar"],img[name="editar"],img[name="guardar"]{
     cursor:pointer;
     width:20px;
     background-color: transparent;
     border: 1px solid;
     border-radius: 3px;
     padding: 2px;
+    margin:2px;
 }
 
-img[name="icono-eliminar"]{
+img[name="eliminar"]{
     background-color: rgb(136, 240, 176);
 }
-img[name="icono-editar"]{
+img[name="editar"]{
     background-color: rgb(136, 136, 201);
 }
-img[name="icono-guardar"]{
+img[name="guardar"]{
     background-color: rgb(238, 216, 175);
 }
 
 .edita{
     background-color: white;
     width: fit-content;
+}
+.caixa-imaxen{
+    display: flex;
+    align-items: center;
+    flex:1;
+}
+.caixa{
+    display: flex;
+    width: 75%;
+    justify-content: space-evenly;
+}
+.imaxe-user{
+        display: flex;
+    align-items: center;
+  
+    border: 1px solid;
+    border-radius: 5px;
+}
+.datos{
+    flex:1;
+    background-color: transparent;
+}
+.edito{
+    background-color: white;
+     flex:1
 }

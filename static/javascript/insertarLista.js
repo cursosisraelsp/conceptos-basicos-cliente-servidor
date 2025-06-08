@@ -2,7 +2,8 @@
 // ####################################################
 //https://es.javascript.info/formdata
 
-import { pintarEliminarGardarEditar } from "./Funcions/helpers.js";
+import { eventosIconos } from "./eventos.js";
+import { imaxesEliminarGardarEditar } from "./Funcions/helpers.js";
 
 
 
@@ -16,15 +17,15 @@ envio.addEventListener("submit", (e) => {
 
   let etiquetaDivCaixa = document.createElement("div");
   let etiquetaDivImaxen = document.createElement("div");
-  let etiquetaImaxen = document.createElement("img");
-  
+  //let etiquetaImaxen = document.createElement("img");
+  etiquetaDivImaxen.className = "caixa-imaxen"
   etiquetaDivCaixa.className = "caixa";
 
   // ### Bloque 1 - inserción de elementos en elementos
   // ### PREPARANDO A CAIXA DE SAÍDA
 
   etiquetaDivCaixa.append(etiquetaDivImaxen);
-  etiquetaDivImaxen.append(etiquetaImaxen);
+  //etiquetaDivImaxen.append(etiquetaImaxen);
 
   // ####################################################
 
@@ -37,19 +38,22 @@ envio.addEventListener("submit", (e) => {
       let archivo = datosFormulario.get("Avatar");
       let imaxen = document.createElement("img");
       imaxen.src = URL.createObjectURL(archivo);
+      imaxen.className = "imaxe-user";
       etiquetaDivImaxen.append(imaxen);
     } else {
       let etiquetaP = document.createElement("p");
+      etiquetaP.className = "datos";
+      etiquetaP.contentEditable = "false";
       etiquetaP.innerHTML = value;
       etiquetaDivCaixa.append(etiquetaP);
     }
     
   }
-  let icono = pintarEliminarGardarEditar()
- 
-  etiquetaDivCaixa.append(icono.editar)
-  etiquetaDivCaixa.append(icono.garda)
-  etiquetaDivCaixa.append(icono.eliminar)
+  let iconos = imaxesEliminarGardarEditar()
+ for(let icono in iconos){
+  etiquetaDivCaixa.append(iconos[`${icono}`])
+ }
+  eventosIconos(iconos)
   document.body.prepend(etiquetaDivCaixa);
 })
 

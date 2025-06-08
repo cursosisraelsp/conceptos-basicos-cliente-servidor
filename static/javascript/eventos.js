@@ -1,24 +1,20 @@
-export const eventos = (referciasElementos) => {
-    console.log("referciasElementos ",referciasElementos)
-    referciasElementos.elementoInput.addEventListener("input", (e) => {
-            console.log("A entrada é: ", e.target.value);
-            referciasElementos.idTextoPintado.innerHTML = e.target.value;
-          });
-    referciasElementos.idLeoParrafo.addEventListener("click", () => {
-            console.log(referciasElementos.idTextoPintado.textContent);
-          });
-    referciasElementos.refImaxenEliminar.addEventListener("click", () => {
-            console.log("clico dende a imaxen");
-            //idTextoPintado.remove();// ELIMINA A REFERENCIA
-            referciasElementos.idTextoPintado.textContent = "";
-          });
-          referciasElementos.refImaxenEditar.addEventListener("click", () => {
-            referciasElementos.idTextoPintado.contentEditable = true;
-            referciasElementos.idTextoPintado.className = "edita"
-          });
+import { editarContidos } from "./Funcions/helpers.js"
 
-          referciasElementos.refImaxenGuardar.addEventListener("click", () => {
-            referciasElementos.idTextoPintado.contentEditable = false;
-            referciasElementos.idTextoPintado.className = 'img[name="icono-guardar"]'
-          });
+export const eventosIconos = (icono)=>{
+ 
+
+  icono.eliminar.addEventListener("click",(e)=>{
+    console.log("estoy en icono eliminar",e.target.parentElement.childNodes)
+    //editarContidos(e.target.parentElement.childNodes)
+  })
+  icono.guardar.addEventListener("click",(e)=>{
+    console.log("estoy en icono guardar",e.target)
+     editarContidos(e.target.parentElement.childNodes,false)
+  })
+
+  icono.editar.addEventListener("click",(e)=>{
+    
+     editarContidos(e.target.parentElement.childNodes,true)
+  })
 }
+
