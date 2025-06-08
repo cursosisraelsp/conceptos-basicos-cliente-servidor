@@ -1,4 +1,7 @@
-async function peticion(){
+import { eventos } from "./eventos.js"
+import { refElementosPaxinaApp } from "./referenciasPaxinaApp.js"
+
+async function peticionHtmlApp(){
     let token = localStorage.getItem("token")
                 console.log("entro ... token? ",token)
                 const peticion = await fetch("/paxina-app",{
@@ -10,7 +13,9 @@ async function peticion(){
                 const paxinaText = await peticion.text()
                 console.log("paxina ?",paxinaText)
                 document.body.innerHTML = paxinaText;
+                
 
+                    eventos(refElementosPaxinaApp())
                 sair.addEventListener("click",()=>{
                         console.log("sair")
                         localStorage.removeItem("token");
@@ -52,8 +57,10 @@ async function acceso() {
         })
 }
 if(location.pathname == "/app"){
-    peticion()
+    peticionHtmlApp()
     
+
+   
 }
 if(location.pathname == "/"){
     acceso()

@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(98, 211, 154);
+}
+
+img[name="icono-eliminar"],img[name="icono-editar"],img[name="icono-guardar"]{
+    cursor:pointer;
+    width:20px;
+    background-color: transparent;
+}
+
+.edita{
+    background-color: white;
+    width: fit-content;
+}
