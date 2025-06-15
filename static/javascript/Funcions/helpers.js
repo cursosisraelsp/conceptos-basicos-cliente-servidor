@@ -21,10 +21,9 @@ export const editarContidos = (arraySelectores,editar) => {
     for(let selector of arraySelectores){
         
         if(selector.hasAttribute("contenteditable") && editar === true){
-            selector.contentEditable = true
-            selector.className = "edito"
-        }else if(selector.className == "edito"){
-            
+            selector.contentEditable = true;
+            selector.className = "edito";
+        }else if(selector.className == "edito"){        
             selector.contentEditable = false
             selector.className ="datos"
         }

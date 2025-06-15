@@ -45,6 +45,7 @@ img[name="guardar"]{
 .caixa-imaxen{
     display: flex;
     align-items: center;
+    justify-content: center;
     flex:1;
 }
 .caixa{
@@ -62,7 +63,9 @@ img[name="guardar"]{
 .datos{
     flex:1;
     background-color: transparent;
+    text-align: center;
 }
+
 .edito{
     background-color: white;
      flex:1
