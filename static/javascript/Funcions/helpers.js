@@ -1,4 +1,4 @@
-import { comunicacion, comunicacionServer } from "../comunicacionServer.js"
+import { comunicacionServer } from "../comunicacionServer.js"
 import { insertoLista } from "../insertarLista.js"
 
 export const imaxesEliminarGardarEditar = () =>{
@@ -37,7 +37,6 @@ export const borrarElemento = (referencia) =>{
 }
 export async function peticionHtmlApp(){
 
-                //await comunicacion.peticionGetConToken()
                 let peticionPaxina = new comunicacionServer()
                 await peticionPaxina.peticionGetConToken()
                 insertoLista()
@@ -52,7 +51,6 @@ export async function acceso() {
     botonEnviar.addEventListener("click",async (e)=>{
             e.preventDefault();
 
-            //let resposta = await comunicacion.peticionPostFormulario()
             let peticionPaxina = new comunicacionServer()
             let resposta = await peticionPaxina.peticionPostFormulario()
             if(resposta.resposta === "acesso autorizado"){
