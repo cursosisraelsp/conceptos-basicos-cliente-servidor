@@ -1,6 +1,7 @@
-export const comunicacion = {
-    peticionGetConToken : async ()=>{
-        let token = localStorage.getItem("token")
+export class comunicacionServer{
+
+    async peticionGetConToken(){
+                let token = localStorage.getItem("token")
                 console.log("entro ... token? ",token)
                 const peticion = await fetch("/paxina-app",{
                     method:"GET",
@@ -11,9 +12,10 @@ export const comunicacion = {
                 const paxinaText = await peticion.text()
                 console.log("paxina ?",paxinaText)
                 document.body.innerHTML = paxinaText;
-    },
-    peticionPostFormulario :async ()=>{
-        let datosFormulario = new FormData(formulario);
+    }
+
+    async peticionPostFormulario(){
+            let datosFormulario = new FormData(formulario);
             let entradas = Object.fromEntries(datosFormulario.entries());
             
             console.log(JSON.stringify(entradas))
