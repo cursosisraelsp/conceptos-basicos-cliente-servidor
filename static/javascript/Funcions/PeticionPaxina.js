@@ -31,9 +31,6 @@ export async function PeticionPaxina(){
                 const refMain = document.querySelector("main");
                 console.log("refMain ?",refMain)
 
-
-
-                
                 //refMain.innerHTML = `<div>${tarefasJson.tareas1}</div>`;    
 
                 //refMain.innerHTML = "";
@@ -51,10 +48,25 @@ export async function PeticionPaxina(){
       for (let propiedade in tarefasJson) {
         console.log(tarefasJson[propiedade], propiedade); // CONTIDO DO OBXETO obxetos[propiedade], propiedade É A PROPIEDADE
         let elementoP = document.createElement("p"); // CREO UNHA ETIQUETA 'p'
-        elementoP.innerHTML = tarefasJson[propiedade]; // ACCEDO O propiedade DUN OBXETO E a introduzco na etiqueta p creada
+        let elementoSpan = document.createElement("span"); // CREO UNHA ETIQUETA 'span'
+        let elementoImg = document.createElement("img"); // CREO UNHA ETIQUETA 'img'
+        elementoImg.src = "./imaxes/eliminar-50.png";
+        elementoImg.className = "iconos";
+        //console.log("elementoSpan ?", elementoSpan);
+        elementoSpan.innerHTML = tarefasJson[propiedade]; // ACCEDO O propiedade DUN OBXETO E a introduzco na etiqueta p creada
+        elementoP.append(elementoSpan); // INTRODUZCO NO DIV a etiqueta creada p co seu propiedade
+        elementoP.append(elementoImg); 
+        //elementoP.innerHTML = tarefasJson[propiedade]; // ACCEDO O propiedade DUN OBXETO E a introduzco na etiqueta p creada
         console.log("elementoP", elementoP);
         elementoDiv.append(elementoP); // INTRODUZCO NO DIV a etiqueta creada p co seu propiedade
-        console.log(elementoDiv);
+        //console.log(elementoDiv);
+
+
+        elementoImg.addEventListener("click",(e)=>{
+            console.log("imaxen clicada",e.target)
+            e.target.parentElement.remove();
+        })
+
       }
       document.body.append(elementoDiv);
 
